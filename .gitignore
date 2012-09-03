@@ -1,0 +1,8 @@
+.idea
+target
+*.iml
+src/main/resources/META-INF/cli
+src/main/resources/META-INF/glob
+src/main/resources/META-INF/jshint
+src/main/resources/META-INF/lru-cache
+src/main/resources/META-INF/minimatch
