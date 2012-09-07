@@ -7,9 +7,18 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <name>jshint-java</name>
+    <description>Thin Java layer over Node-JSHint</description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <scm>
+        <connection>scm:git:git://github.com:mulesoft/jshint-java.git</connection>
+        <developerConnection>scm:git:git@github.com:mulesoft/jshint-java.git</developerConnection>
+        <url>http://github.com/mulesoft/jshint-java</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -54,8 +63,51 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <version>1.8.0</version>
+                <configuration>
+                    <header>LICENSE_HEADER.txt</header>
+                    <excludes>
+                        <exclude>src/main/resources/META-INF/cli/**</exclude>
+                        <exclude>src/main/resources/META-INF/jshint/**</exclude>
+                        <exclude>src/main/resources/META-INF/lru-cache/**</exclude>
+                        <exclude>src/main/resources/META-INF/minimatch/**</exclude>
+                        <exclude>target/**</exclude>
+                        <exclude>**/.gitignore</exclude>
+                        <exclude>**/*.txt</exclude>
+                        <exclude>**/*.xml</exclude>
+                        <exclude>**/*.md</exclude>
+                        <exclude>**/.name</exclude>
+                        <exclude>**/*.json</exclude>
+                        <exclude>**/*.js</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Release Repository</name>
+            <url>http://repository.mulesoft.org/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>mulesoft-snapshots</id>
+            <name>MuleSoft Snapshot Repository</name>
+            <url>http://repository.mulesoft.org/snapshots/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
 
