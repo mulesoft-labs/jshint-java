@@ -88,8 +88,8 @@ public class JSHint implements Runnable {
                     String.format("The following errors were found in file [%s]: ", fileName)});
             for (Object errorAsObject : errors) {
                 NativeObject error = (NativeObject) errorAsObject;
-                String message = String.format("Line: %d col: %d, %s", ((Double) error.get("line")).longValue(),
-                        ((Double) error.get("character")).longValue(), error.get("reason"));
+                String message = String.format("Line: %d col: %s, %s", ((Double) error.get("line")).longValue(),
+                        error.get("character").toString().replaceAll("\\.0*$", ""), error.get("reason"));
 
                 log.call(ctx, global, console, new Object[]{message});
             }
