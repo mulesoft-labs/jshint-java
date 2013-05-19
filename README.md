@@ -5,8 +5,9 @@ A thin wrapper over [node-jshint](https://github.com/jshint/node-jshint) impleme
 
     mvn clean install
 
-# Authors
-Alberto Pose (@thepose)
+# Authors & Contributors
+ * Alberto Pose (@thepose)
+ * Johann Barbie (https://github.com/johannbarbie)
 
 # License
 Copyright 2012 MuleSoft, Inc.
